@@ -1,13 +1,32 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	"name": "Rust",
+	"name": "shisankanri2",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {}
 	},
-
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.tabSize": 2,
+				"files.insertFinalNewline": true,
+				"files.trimFinalNewlines": true,
+				"editor.formatOnSave": true
+			},
+			"extensions": [
+				"eamodio.gitlens",
+				"mhutchie.git-graph"
+			]
+		}
+	},
+	"remoteEnv": {
+		"LANG": "C.UTF-8",
+		"TZ": "Asia/Tokyo"
+	},
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
 	// "mounts": [
 	// 	{
@@ -16,19 +35,14 @@
 	// 		"type": "volume"
 	// 	}
 	// ]
-
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh"
-
+	"postCreateCommand": "yarn"
 	// Configure tool-specific properties.
 	// "customizations": {},
-
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
