@@ -2,11 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import { greet } from '@/scraping/pkg'
+import { greet, square } from '@/scraping/pkg'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [inputNum, setInputNum] = useState(0)
   return (
     <>
       <Head>
@@ -17,6 +19,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <button type="button" onClick={greet}>wasm greet</button>
+        <input type="number" onChange={(e) => setInputNum(Number(e.target.value))} />
+        <p>{inputNum} * {inputNum} = {square(inputNum)}</p>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
