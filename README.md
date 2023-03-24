@@ -6,6 +6,7 @@
 ```
 $ cd scraping
 $ cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack build"
+## このままだとビルド通らないので https://github.com/harryfei/which-rs/issues/31#issuecomment-1480631905 を参考に直接 finder と checker を書き換える
 ```
 
 # UI(Next.js)
