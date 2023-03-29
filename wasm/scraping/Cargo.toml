@@ -23,9 +23,9 @@ console_error_panic_hook = { version = "0.1.6", optional = true }
 # compared to the default allocator's ~10K. It is slower than the default
 # allocator, however.
 wee_alloc = { version = "0.4.5", optional = true }
-headless_chrome = "1.0.5"
-failure = "0.1.8"
-getrandom = { version = "0.2", features = ["js"] }
+# headless_chrome = "1.0.5"
+# failure = "0.1.8"
+# getrandom = { version = "0.2", features = ["js"] }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.13"
